@@ -1,3 +1,0 @@
-DROP TABLE products IF EXISTS;
-CREATE TABLE IF NOT EXISTS products (id bigserial, title VARCHAR(255), cost int, PRIMARY KEY (id));
-INSERT INTO products (title, cost) VALUES ('Beans', 10), ('Bread', 15), ('Bottle', 5), ('Can', 16), ('Bar', 18), ('Beans2', 30), ('Bread2', 45), ('Bottle2', 35), ('Can2', 36), ('Bar2', 28), ('Beans3', 80), ('Bread3', 55), ('Bottle3', 25), ('Can3', 66), ('Bar3', 88), ('Beans4', 50), ('Bread4', 85), ('Bottle4', 35), ('Can4', 46), ('Bar4', 48);
