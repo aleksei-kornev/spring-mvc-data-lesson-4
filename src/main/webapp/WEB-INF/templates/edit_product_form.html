@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring Geekbrains Lesson-2 app</title>
+</head>
+
+<body>
+    <h1>Изменить данные студента</h1>
+    <form th:action="@{/products/edit}" th:object="${product}" method="POST">
+        <input hidden th:field="*{id}"/>
+        <br>
+        Name: <input th:field="*{title}"/>
+        <br>
+        Score: <input th:field="*{cost}"/>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

@@ -1,0 +1,6 @@
+com\geekbrains\spring\mvc\controllers\StudentsController.class
+com\geekbrains\spring\mvc\Launcher.class
+com\geekbrains\spring\mvc\controllers\MainController.class
+com\geekbrains\spring\mvc\services\StudentsService.class
+com\geekbrains\spring\mvc\repositories\StudentsRepository.class
+com\geekbrains\spring\mvc\model\Student.class

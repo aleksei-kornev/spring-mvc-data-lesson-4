@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>Spring MVC GeekApp</title>
+</head>
+
+<body>
+    <h1>Изменить данные студента</h1>
+    <form th:action="@{/students/edit}" th:object="${student}" method="POST">
+        <input hidden th:field="*{id}"/>
+        <br>
+        Name: <input th:field="*{name}"/>
+        <br>
+        Score: <input th:field="*{score}"/>
+        <br>
+        <input type="submit" value="Submit" />
+    </form>
+    <br>
+    <a th:href="@{/}">на Главную страницу</a>
+</body>
+</html>

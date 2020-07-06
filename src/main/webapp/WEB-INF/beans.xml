@@ -1,0 +1,80 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd
+        http://www.springframework.org/schema/data/jpa
+        http://www.springframework.org/schema/data/jpa/spring-jpa.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <context:component-scan base-package="com.geekbrains.spring.mvc"/>
+
+    <bean id="templateResolver" class="org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver">
+        <property name="prefix" value="/WEB-INF/templates/"/>
+        <property name="suffix" value=".html"/>
+        <property name="templateMode" value="HTML"/>
+    </bean>
+
+    <bean id="templateEngine" class="org.thymeleaf.spring5.SpringTemplateEngine">
+        <property name="templateResolver" ref="templateResolver"/>
+    </bean>
+
+    <bean class="org.thymeleaf.spring5.view.ThymeleafViewResolver">
+        <property name="templateEngine" ref="templateEngine"/>
+        <property name="characterEncoding" value="UTF-8"/>
+    </bean>
+
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="org.h2.Driver"/>
+        <property name="jdbcUrl" value="jdbc:h2:mem:mydatabase;MODE=PostgreSQL"/>
+        <property name="user" value="sa"/>
+        <property name="password" value=""/>
+        <property name="minPoolSize" value="1"/>
+        <property name="maxPoolSize" value="5"/>
+        <property name="maxIdleTime" value="30000"/>
+    </bean>
+
+    <tx:annotation-driven/>
+
+    <jpa:repositories base-package="com.geekbrains.spring.mvc.repositories"/>
+
+    <bean id="entityManagerFactory"
+          class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
+        <property name="packagesToScan" value="com.geekbrains.spring.mvc.model"/>
+        <property name="dataSource" ref="dataSource"/>
+
+        <property name="jpaProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">create</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.H2Dialect</prop>
+            </props>
+        </property>
+
+        <property name="persistenceProvider">
+            <bean class="org.hibernate.jpa.HibernatePersistenceProvider"/>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="entityManagerFactory" ref="entityManagerFactory"/>
+    </bean>
+</beans>
