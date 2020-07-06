@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-//
+// комментарий для pull-запроса
 // root: http://localhost:8189/app/products
 
 @Controller
