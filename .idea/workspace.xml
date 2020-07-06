@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a0bb9fe-6f71-44b1-af59-de40638bcdd5" name="Default Changelist" comment="" />
+    <list default="true" id="0a0bb9fe-6f71-44b1-af59-de40638bcdd5" name="Default Changelist" comment="Empty." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,11 +16,13 @@
     </option>
   </component>
   <component name="ProjectId" id="1duLHNxzlipko1xPnENjBqhkUZz" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -70,7 +72,19 @@
       <option name="presentableId" value="Default" />
       <updated>1593269942058</updated>
     </task>
+    <task id="LOCAL-00001" summary="Empty.">
+      <created>1594046304304</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1594046304304</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Empty." />
+    <option name="LAST_COMMIT_MESSAGE" value="Empty." />
   </component>
   <component name="WindowStateProjectService">
     <state width="1358" height="238" key="GridCell.Tab.0.bottom" timestamp="1594045135127">
